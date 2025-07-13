@@ -2,7 +2,7 @@ import pandas as pd
 
 def clean_student_data(df):
     # Drop rows where "study_hours" or attendance are missing 
-    df = df.dropna(subset=['study_hours','attendance'])
+    df = df.dropna(subset=['study_hours','attendance','final_score'])
     
     #fill missing "internet usage" with most frequent (mode)
     df["internet_usage"].fillna(df["internet_usage"].mode()[0])
